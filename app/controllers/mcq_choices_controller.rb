@@ -1,0 +1,2 @@
+class McqChoicesController < ApplicationController
+end
