@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Quizzes API', type: :request do
 
-	# initialize test data 
+	# Initialize test data 
   	let!(:quizzes) { create_list(:quiz, 10) }
   	let(:quiz_id) { quizzes.first.id }
 
