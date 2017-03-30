@@ -34,7 +34,7 @@ class McqQuestionsController < ApplicationController
 	private
 
 	def mcq_question_params
-		params.permit(:text, :is_correct)
+		params.permit(:text)
 	end
 
 	def set_quiz

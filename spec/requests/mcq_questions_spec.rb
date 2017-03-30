@@ -39,7 +39,7 @@ RSpec.describe 'McqQuestions API' do
   describe 'GET /quizzes/:quiz_id/mcq_questions/:id' do
     before { get "/quizzes/#{quiz_id}/mcq_questions/#{id}" }
 
-    context 'when todo item exists' do
+    context 'when quiz mcq question exists' do
       it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
@@ -62,7 +62,7 @@ RSpec.describe 'McqQuestions API' do
     end
   end
 
-  # Test suite for PUT /quizzes/:quiz_id/mcq_questions
+  # Test suite for POST /quizzes/:quiz_id/mcq_questions
   describe 'POST /quizzes/:quiz_id/mcq_questions' do
     let(:valid_attributes) { { text: 'Visit Narnia'} }
 
