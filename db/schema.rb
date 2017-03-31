@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 20170328192031) do
 
   create_table "mcq_choices", force: :cascade do |t|
     t.string   "text"
-    t.boolean  "is_correct"
+    t.boolean  "is_correct",      default: false
     t.integer  "mcq_question_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.index ["mcq_question_id"], name: "index_mcq_choices_on_mcq_question_id"
   end
 
