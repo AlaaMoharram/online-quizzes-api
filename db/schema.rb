@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331133218) do
+ActiveRecord::Schema.define(version: 20170331163902) do
+
+  create_table "mcq_checkbox_choices", force: :cascade do |t|
+    t.string   "text"
+    t.boolean  "is_correct",      default: false
+    t.integer  "mcq_checkbox_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.index ["mcq_checkbox_id"], name: "index_mcq_checkbox_choices_on_mcq_checkbox_id"
+  end
+
+  create_table "mcq_checkboxes", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "quiz_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_mcq_checkboxes_on_quiz_id"
+  end
 
   create_table "mcq_choices", force: :cascade do |t|
     t.string   "text"
