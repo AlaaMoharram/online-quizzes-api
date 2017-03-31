@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328192031) do
+ActiveRecord::Schema.define(version: 20170331133218) do
 
   create_table "mcq_choices", force: :cascade do |t|
     t.string   "text"
-    t.boolean  "is_correct",      default: false
+    t.boolean  "is_correct"
     t.integer  "mcq_question_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.index ["mcq_question_id"], name: "index_mcq_choices_on_mcq_question_id"
   end
 
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 20170328192031) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "short_answer_questions", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "quiz_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_short_answer_questions_on_quiz_id"
   end
 
 end
